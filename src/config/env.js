@@ -8,6 +8,7 @@ function numberFromEnv(name, fallback) {
 const config = {
   nodeEnv: process.env.NODE_ENV || "development",
   port: numberFromEnv("PORT", 3000),
+  host: process.env.HOST || "0.0.0.0",
   corsOrigin: process.env.CORS_ORIGIN || "*",
   githubToken: process.env.GITHUB_TOKEN || "",
   analysisMaxRepos: numberFromEnv("ANALYSIS_MAX_REPOS", 300),

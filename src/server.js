@@ -1,6 +1,6 @@
 const app = require("./app");
 const config = require("./config/env");
 
-app.listen(config.port, () => {
-  console.log(`GitHub Profile Analyzer API running on port ${config.port}`);
+app.listen(config.port, config.host, () => {
+  console.log(`GitHub Profile Analyzer API running on ${config.host}:${config.port}`);
 });
