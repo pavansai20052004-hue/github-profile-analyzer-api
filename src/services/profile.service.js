@@ -180,8 +180,8 @@ async function listProfiles(options) {
   const pool = getPool();
   const [countRows] = await pool.execute(`SELECT COUNT(*) AS total FROM github_profiles ${whereSql}`, params);
   const [rows] = await pool.execute(
-    `SELECT * FROM github_profiles ${whereSql} ORDER BY ${sortColumn} ${sortOrder} LIMIT ? OFFSET ?`,
-    [...params, limit, offset]
+    `SELECT * FROM github_profiles ${whereSql} ORDER BY ${sortColumn} ${sortOrder} LIMIT ${limit} OFFSET ${offset}`,
+    params
   );
 
   return {
